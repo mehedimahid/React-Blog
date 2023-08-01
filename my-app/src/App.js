@@ -1,11 +1,9 @@
 import "./App.css";
-import HookCounter from "./component/HOOKS/HookCounter";
-import UseStateTodos from "./component/HOOKS/UseStateTodos";
+import UsestatewithArray from "./component/UsestatewithArray";
 function App() {
   return (
     <div className="App">
-      <UseStateTodos />
-      <HookCounter />
+      <UsestatewithArray />
     </div>
   );
 }
