@@ -1,9 +1,10 @@
 import "./App.css";
-import UsestatewithArray from "./component/UsestatewithArray";
+import MyFunctionalComponent from "./component/MyFunctionalComponent";
+
 function App() {
   return (
     <div className="App">
-      <UsestatewithArray />
+      <MyFunctionalComponent />
     </div>
   );
 }
