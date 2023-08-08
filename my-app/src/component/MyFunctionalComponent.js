@@ -3,15 +3,28 @@ import React, { useEffect, useState } from "react";
 function MyFunctionalComponent() {
   const [count, setCount] = useState(0);
   const [date, setDate] = useState(new Date());
+
   useEffect(() => {
     document.title = `clicked ${count} times`;
   }, [count]);
+
+  useEffect(() => {
+    console.log("Timer start");
+    const interval = setInterval(timer, 1000);
+
+    //clear interval stop timer
+    return () => {
+      console.log("component unmounted to stop timming");
+      clearInterval(interval)
+    };
+  }, []);
 
   const addClick = () => {
     setCount((prevCount) => prevCount + 1);
   };
 
-  const click = () => {
+  const timer = () => {
+    console.log("Timer Running");
     setDate(new Date());
   };
 

@@ -8,17 +8,21 @@ export class MyClassComponent extends Component {
   componentDidMount() {
     const { count } = this.state;
     document.title = `Cliked ${count} times`;
-    setInterval(this.click, 1000);
+    this.interval = setInterval(this.timer, 1000);
   }
   componentDidUpdate() {
     const { count } = this.state;
     document.title = `Cliked ${count} times`;
   }
-
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
   addClick = () => {
     this.setState(({ count }) => ({ count: count + 1 }));
   };
-  click = () => {
+
+  timer = () => {
+    console.log("Timer Running");
     this.setState({
       date: new Date(),
     });
